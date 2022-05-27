@@ -1,0 +1,42 @@
+
+  
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <!-- <h1>{{ 'demo.title' | translate }}</h1>
+            <h4>{{ 'demo.text' | translate }}</h4> -->
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2 matSubheader>Pages
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <a href="https://github.com/SteliosGogas">
+                    <mat-icon>public icon</mat-icon>
+                    GitHub
+                </a>
+            </button>
+          </mat-menu>
+    </h2>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/pie">Pie Chart</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/line">Line chart</a>
+
+    <mat-divider></mat-divider>
+
+    <h3 matSubheader>Multilanguage page(English, Greek)</h3>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+        <mat-icon>public icon</mat-icon>
+        Change
+    </a>
+    <button (click)="useLanguage('en')">en</button>
+    <button (click)="useLanguage('gr')">gr</button>
+
+</mat-nav-list>

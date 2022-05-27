@@ -1,0 +1,137 @@
+<h3 style="text-align:center;">Position of entities</h3>
+
+<div style="margin:20px auto; width:800px;">
+  <ol-map
+  [lat]="40.6331643293735"
+  [lon]="22.9544653252695"
+  [zoom]="3"
+  width="100%"
+  height="500px"
+  >
+    <ol-map-marker
+      [lat]="40.6331643293735"
+      [lon]="22.9544653252695"
+      text="ΠΕ197234"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="40.6329724600705"
+      [lon]="22.9408531230477"
+      text="ΠΕ197596"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="40.6267736935401"
+      [lon]="22.9512629207105"
+      text="ΠΕ292122"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="40.576182"
+      [lon]="22.958593"
+      text="ΠΕ243059"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="40.595014"
+      [lon]="22.957374"
+      text="ΠΕ243544"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="40.611982"
+      [lon]="22.974028"
+      text="ΠΕ243009"
+    >
+    </ol-map-marker>
+    <ol-map-marker
+      [lat]="40.620295"
+      [lon]="22.96068"
+      text="ΠΕ243345"
+    >
+    </ol-map-marker>
+  </ol-map>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="60">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+
+                <!-- Client Code Column -->
+                <ng-container matColumnDef="client_code">
+                    <th mat-header-cell *matHeaderCellDef> Client Code </th>
+                    <td mat-cell *matCellDef="let element"> {{element.client_code}} </td>
+                </ng-container>
+
+                <!-- Category Column -->
+                <ng-container matColumnDef="category">
+                    <th mat-header-cell *matHeaderCellDef> Category </th>
+                    <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                </ng-container>
+
+                <!-- Year Column -->
+                <ng-container matColumnDef="year">
+                    <th mat-header-cell *matHeaderCellDef> Year </th>
+                    <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+                </ng-container>
+
+                <!-- Total consumption of gas Column -->
+                <ng-container matColumnDef="total_consumption_of_gas">
+                  <th mat-header-cell *matHeaderCellDef> Total consumption of gas </th>
+                  <td mat-cell *matCellDef="let element"> {{element.total_consumption_of_gas}} </td>
+              </ng-container>
+
+              <!-- Value of gas Column -->
+              <ng-container matColumnDef="value_of_gas">
+                <th mat-header-cell *matHeaderCellDef> Value of gas </th>
+                <td mat-cell *matCellDef="let element"> {{element.value_of_gas}} </td>
+            </ng-container>
+            
+            <!-- Lan Column -->
+            <ng-container matColumnDef="lan">
+              <th mat-header-cell *matHeaderCellDef> Lan</th>
+              <td mat-cell *matCellDef="let element"> {{element.lan}} </td>
+          </ng-container>
+
+          <!-- Lon Column -->
+          <ng-container matColumnDef="lon">
+            <th mat-header-cell *matHeaderCellDef> Lon </th>
+            <td mat-cell *matCellDef="let element"> {{element.lon}} </td>
+        </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        </div>
+
+    </div>
+
+</div>
+
+<br>
+<br>
+<br>
